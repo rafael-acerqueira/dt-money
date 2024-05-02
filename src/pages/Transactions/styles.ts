@@ -15,7 +15,14 @@ export const TransactionsTable = styled.table`
   td {
     padding: 1.25rem 2rem;
     background: ${props => props.theme["gray-700"]};
-    border-radius: 6px;
+    &:first-child {
+      border-top-left-radius: 6px;
+      border-bottom-left-radius: 6px;
+    }
+    &:last-child {
+      border-top-right-radius: 6px;
+      border-bottom-right-radius: 6px;
+    }
   }
 `;
 
