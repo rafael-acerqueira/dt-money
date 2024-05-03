@@ -9,8 +9,8 @@ import {
   TransactionType,
   TransactionTypeButton
 } from './styles';
-
-
+import { useContext } from 'react';
+import { TransactionsContext } from '../../contexts/TransactionContext';
 
 interface TransactionForm {
   description: string,
@@ -19,11 +19,28 @@ interface TransactionForm {
   type: 'income' | 'outcome'
 }
 
-export function NewTransactionModal() {
+interface NewTransactionModalProps {
+  closeModal: () => void
+}
 
-  const { control, register, handleSubmit, formState: { isSubmitting } } = useForm<TransactionForm>()
+export function NewTransactionModal({ closeModal }: NewTransactionModalProps) {
 
-  function handleCreateNewTransaction(data: TransactionForm) {
+  const { control, register, handleSubmit, formState: { isSubmitting }, reset } = useForm<TransactionForm>()
+
+  const { createTransaction } = useContext(TransactionsContext)
+
+  async function handleCreateNewTransaction(data: TransactionForm) {
+    const { description, price, category, type } = data;
+
+    await createTransaction({
+      description,
+      price,
+      category,
+      type,
+    });
+
+    reset()
+    closeModal()
   }
 
   return (

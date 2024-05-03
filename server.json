@@ -1,7 +1,7 @@
 {
   "transactions": [
     {
-      "id": 1,
+      "id": "1",
       "description": "Desenvolvimento de site",
       "type": "income",
       "category": "Venda",
@@ -9,12 +9,36 @@
       "createdAt": "2022-07-29T19:36:44.505Z"
     },
     {
-      "id": 2,
+      "id": "2",
       "description": "Hambúrguer",
       "type": "outcome",
       "category": "Alimentação",
       "price": 50,
       "createdAt": "2022-07-29T19:30:44.505Z"
+    },
+    {
+      "id": "782c",
+      "description": "Xuxis",
+      "price": 1950,
+      "category": "Venda",
+      "type": "income",
+      "createdAt": "2024-05-03T13:36:51.553Z"
+    },
+    {
+      "id": "5e97",
+      "description": "Arrz",
+      "price": 20,
+      "category": "comidinha",
+      "type": "outcome",
+      "createdAt": "2024-05-03T13:50:28.310Z"
+    },
+    {
+      "id": "da85",
+      "description": "adasda",
+      "price": 131231,
+      "category": "dada",
+      "type": "income",
+      "createdAt": "2024-05-03T13:58:54.379Z"
     }
   ]
 }
