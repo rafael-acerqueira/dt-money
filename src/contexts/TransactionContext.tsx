@@ -12,6 +12,7 @@ interface Transaction {
 
 interface TransactionContextType {
   transactions: Transaction[];
+  loadTransactions: (query?: string) => Promise<void>
 }
 
 interface TransactionsProviderProps {
@@ -38,7 +39,7 @@ export function TransactionsProvider({ children }: TransactionsProviderProps) {
   }, []);
 
   return (
-    <TransactionsContext.Provider value={{ transactions }}>
+    <TransactionsContext.Provider value={{ transactions, loadTransactions }}>
       {children}
     </TransactionsContext.Provider>
   );
